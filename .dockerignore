@@ -1,0 +1,17 @@
+**
+!Dockerfile
+!backend/
+!backend/pyproject.toml
+!backend/uv.lock
+!backend/src/
+!backend/src/**
+!backend/prompts/
+!backend/prompts/**
+!backend/scenarios/
+!backend/scenarios/**
+!backend/reports/
+!backend/reports/**
+!backend/deployment.py
+**/__pycache__/
+**/.env*
+**/.runtime/

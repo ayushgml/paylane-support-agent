@@ -1,0 +1,490 @@
+{
+  "verified_at": "2026-10-18T08:59:36.753764+00:00",
+  "site": "https://paylane-support-ayush.vercel.app",
+  "backend": "https://paylane-api-production.up.railway.app",
+  "purpose": "Hosted transport and synthetic effect/replay/restart smoke; separate from the recorded repeated core-agent benchmark. No secrets, cookies or invite values are retained.",
+  "checks": [
+    {
+      "check": "frontend_ready",
+      "passed": true
+    },
+    {
+      "check": "live_backend_available",
+      "passed": true
+    },
+    {
+      "check": "twelve_saved_scenarios_public",
+      "passed": true
+    },
+    {
+      "check": "recorded_report_public",
+      "passed": true
+    },
+    {
+      "check": "direct_backend_data_denied",
+      "passed": true
+    },
+    {
+      "check": "foreign_origin_denied",
+      "passed": true
+    },
+    {
+      "check": "private_invite_admission",
+      "passed": true
+    },
+    {
+      "check": "admission_cookie_secure_httponly",
+      "passed": true
+    },
+    {
+      "check": "csrf_required",
+      "passed": true
+    },
+    {
+      "check": "admitted_session_created",
+      "passed": true
+    },
+    {
+      "check": "verified_mock_refund_confirmed",
+      "passed": true
+    },
+    {
+      "check": "exact_request_replay_matches",
+      "passed": true
+    },
+    {
+      "check": "controlled_backend_restart_requested",
+      "passed": true
+    },
+    {
+      "check": "signed_session_survives_restart",
+      "passed": true
+    },
+    {
+      "check": "session_creation_after_restart",
+      "passed": true
+    },
+    {
+      "check": "duplicate_refund_blocked_after_restart",
+      "passed": true
+    }
+  ],
+  "passed": 16,
+  "total": 16,
+  "refund_result": {
+    "text": "Your $42.50 refund is confirmed. Reference: ref_596efde8c5d34c41. Is there anything else I can help with?",
+    "outcome": "refund_confirmed",
+    "events": [
+      {
+        "tool": "verification",
+        "phase": "verified",
+        "origin": "backend"
+      },
+      {
+        "tool": "risk_classifier",
+        "phase": "completed",
+        "origin": "preflight",
+        "route": "normal",
+        "reason": "none",
+        "action": "refund_request",
+        "latency_ms": 871,
+        "http_attempts": 1
+      },
+      {
+        "tool": "agent_model",
+        "phase": "completed",
+        "origin": "model",
+        "latency_ms": 984,
+        "http_attempts": 1,
+        "provider": "Sail Research",
+        "finish_reason": "tool_calls"
+      },
+      {
+        "tool": "get_transaction",
+        "phase": "proposed",
+        "origin": "model",
+        "arguments": "{\"customer_id\":\"cus_alex\",\"txn_id\":\"TXN-1042\"}"
+      },
+      {
+        "tool": "get_transaction",
+        "phase": "attempted",
+        "origin": "model",
+        "arguments": "{\"customer_id\":\"cus_alex\",\"txn_id\":\"TXN-1042\"}"
+      },
+      {
+        "tool": "get_transaction",
+        "phase": "executed",
+        "origin": "model",
+        "result": {
+          "amount": 42.5,
+          "date": "2026-10-06T08:52:47.259825+00:00",
+          "merchant": "Northstar",
+          "status": "settled",
+          "policy": {
+            "allowed": true,
+            "reason": "eligible"
+          }
+        }
+      },
+      {
+        "tool": "agent_model",
+        "phase": "completed",
+        "origin": "model",
+        "latency_ms": 900,
+        "http_attempts": 1,
+        "provider": "Sail Research",
+        "finish_reason": "tool_calls"
+      },
+      {
+        "tool": "issue_refund",
+        "phase": "proposed",
+        "origin": "model",
+        "arguments": "{\"amount\":42.5,\"txn_id\":\"TXN-1042\"}"
+      },
+      {
+        "tool": "issue_refund",
+        "phase": "attempted",
+        "origin": "model",
+        "arguments": "{\"amount\":42.5,\"txn_id\":\"TXN-1042\"}"
+      },
+      {
+        "tool": "issue_refund",
+        "phase": "executed",
+        "origin": "model",
+        "result": {
+          "ok": true,
+          "refund_id": "ref_596efde8c5d34c41"
+        }
+      }
+    ],
+    "guardrails": [
+      {
+        "layer": "input",
+        "rule": "bounded_input",
+        "action": "allow",
+        "reason": "Input within message bounds; authorization remains separate"
+      },
+      {
+        "layer": "routing",
+        "rule": "risk_preflight",
+        "action": "allow",
+        "reason": "normal"
+      },
+      {
+        "layer": "tool",
+        "rule": "authorized_execution",
+        "action": "allow",
+        "reason": "get_transaction"
+      },
+      {
+        "layer": "tool",
+        "rule": "authorized_execution",
+        "action": "allow",
+        "reason": "issue_refund"
+      },
+      {
+        "layer": "output",
+        "rule": "evidence_bound_renderer",
+        "action": "allow",
+        "reason": "Approved template and sensitive-data projection"
+      }
+    ],
+    "effect_evidence": {
+      "refund": {
+        "id": "ref_596efde8c5d34c41",
+        "txn_id": "TXN-1042",
+        "amount_cents": 4250
+      },
+      "ticket": null
+    },
+    "verified": true,
+    "usage": [
+      {
+        "_usage": {
+          "prompt_tokens": 276,
+          "completion_tokens": 16,
+          "total_tokens": 292,
+          "cost": 6.48e-05
+        },
+        "_http_attempts": 1,
+        "_latency_ms": 871,
+        "_provider": "Relace",
+        "_model": "deepseek/deepseek-v4.1-flash",
+        "_finish_reason": "stop",
+        "_logical_calls": 1,
+        "_contract_repairs": 0,
+        "_contract_attempts": [
+          {
+            "_usage": {
+              "prompt_tokens": 276,
+              "completion_tokens": 16,
+              "total_tokens": 292,
+              "cost": 6.48e-05,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 6.48e-05,
+                "upstream_inference_prompt_cost": 5.52e-05,
+                "upstream_inference_completions_cost": 9.6e-06
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "_http_attempts": 1,
+            "_latency_ms": 871,
+            "_provider": "Relace",
+            "_model": "deepseek/deepseek-v4.1-flash",
+            "_finish_reason": "stop"
+          }
+        ]
+      },
+      {
+        "_usage": {
+          "prompt_tokens": 1576,
+          "completion_tokens": 64,
+          "total_tokens": 1640,
+          "cost": 0.00016104,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00016104,
+            "upstream_inference_prompt_cost": 0.00014184,
+            "upstream_inference_completions_cost": 1.92e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "_http_attempts": 1,
+        "_latency_ms": 984,
+        "_provider": "Sail Research",
+        "_model": "deepseek/deepseek-v4.1-flash",
+        "_finish_reason": "tool_calls"
+      },
+      {
+        "_usage": {
+          "prompt_tokens": 1730,
+          "completion_tokens": 63,
+          "total_tokens": 1793,
+          "cost": 6.708e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1280,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.708e-05,
+            "upstream_inference_prompt_cost": 4.818e-05,
+            "upstream_inference_completions_cost": 1.89e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "_http_attempts": 1,
+        "_latency_ms": 900,
+        "_provider": "Sail Research",
+        "_model": "deepseek/deepseek-v4.1-flash",
+        "_finish_reason": "tool_calls"
+      }
+    ],
+    "main_model_calls": 2,
+    "error": null,
+    "latency_ms": 2906
+  },
+  "duplicate_result": {
+    "text": "That payment has already been refunded, so I can\u2019t refund it again.",
+    "outcome": "already_refunded",
+    "events": [
+      {
+        "tool": "verification",
+        "phase": "verified",
+        "origin": "backend"
+      },
+      {
+        "tool": "risk_classifier",
+        "phase": "completed",
+        "origin": "preflight",
+        "route": "normal",
+        "reason": "none",
+        "action": "refund_request",
+        "latency_ms": 1332,
+        "http_attempts": 1
+      },
+      {
+        "tool": "agent_model",
+        "phase": "completed",
+        "origin": "model",
+        "latency_ms": 955,
+        "http_attempts": 1,
+        "provider": "Sail Research",
+        "finish_reason": "tool_calls"
+      },
+      {
+        "tool": "get_transaction",
+        "phase": "proposed",
+        "origin": "model",
+        "arguments": "{\"customer_id\":\"cus_alex\",\"txn_id\":\"TXN-1042\"}"
+      },
+      {
+        "tool": "get_transaction",
+        "phase": "attempted",
+        "origin": "model",
+        "arguments": "{\"customer_id\":\"cus_alex\",\"txn_id\":\"TXN-1042\"}"
+      },
+      {
+        "tool": "get_transaction",
+        "phase": "executed",
+        "origin": "model",
+        "result": {
+          "amount": 42.5,
+          "date": "2026-10-06T08:52:47.259825+00:00",
+          "merchant": "Northstar",
+          "status": "refunded",
+          "policy": {
+            "allowed": false,
+            "reason": "already_refunded"
+          }
+        }
+      },
+      {
+        "tool": "response_route",
+        "phase": "resolved",
+        "origin": "policy_guard",
+        "reason": "already_refunded"
+      }
+    ],
+    "guardrails": [
+      {
+        "layer": "input",
+        "rule": "bounded_input",
+        "action": "allow",
+        "reason": "Input within message bounds; authorization remains separate"
+      },
+      {
+        "layer": "routing",
+        "rule": "risk_preflight",
+        "action": "allow",
+        "reason": "normal"
+      },
+      {
+        "layer": "tool",
+        "rule": "authorized_execution",
+        "action": "allow",
+        "reason": "get_transaction"
+      },
+      {
+        "layer": "output",
+        "rule": "evidence_bound_renderer",
+        "action": "allow",
+        "reason": "Approved template and sensitive-data projection"
+      }
+    ],
+    "effect_evidence": {
+      "refund": null,
+      "ticket": null
+    },
+    "verified": true,
+    "usage": [
+      {
+        "_usage": {
+          "prompt_tokens": 276,
+          "completion_tokens": 16,
+          "total_tokens": 292,
+          "cost": 6.48e-05
+        },
+        "_http_attempts": 1,
+        "_latency_ms": 1332,
+        "_provider": "Relace",
+        "_model": "deepseek/deepseek-v4.1-flash",
+        "_finish_reason": "stop",
+        "_logical_calls": 1,
+        "_contract_repairs": 0,
+        "_contract_attempts": [
+          {
+            "_usage": {
+              "prompt_tokens": 276,
+              "completion_tokens": 16,
+              "total_tokens": 292,
+              "cost": 6.48e-05,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 6.48e-05,
+                "upstream_inference_prompt_cost": 5.52e-05,
+                "upstream_inference_completions_cost": 9.6e-06
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "_http_attempts": 1,
+            "_latency_ms": 1332,
+            "_provider": "Relace",
+            "_model": "deepseek/deepseek-v4.1-flash",
+            "_finish_reason": "stop"
+          }
+        ]
+      },
+      {
+        "_usage": {
+          "prompt_tokens": 1576,
+          "completion_tokens": 64,
+          "total_tokens": 1640,
+          "cost": 7.5024e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1024,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 7.5024e-05,
+            "upstream_inference_prompt_cost": 5.5824e-05,
+            "upstream_inference_completions_cost": 1.92e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "_http_attempts": 1,
+        "_latency_ms": 955,
+        "_provider": "Sail Research",
+        "_model": "deepseek/deepseek-v4.1-flash",
+        "_finish_reason": "tool_calls"
+      }
+    ],
+    "main_model_calls": 1,
+    "error": null,
+    "latency_ms": 2433
+  }
+}

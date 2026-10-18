@@ -1,0 +1,8 @@
+title = "Paylane secret scanning"
+[extend]
+useDefault = true
+[[rules]]
+id = "openrouter-api-key"
+description = "OpenRouter API credential"
+regex = '''sk-or-v1-[a-fA-F0-9]{32,}'''
+keywords = ["sk-or-v1-"]

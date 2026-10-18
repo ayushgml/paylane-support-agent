@@ -1,0 +1,22 @@
+{
+  "scanned_at": "2026-10-18T07:58:06.444673+00:00",
+  "python": {
+    "tool": "pip-audit 2.9.0",
+    "locked_dependencies": 88,
+    "vulnerabilities": 0,
+    "skipped": [],
+    "input": "uv export --project backend --locked --extra eval --no-dev --no-hashes --no-emit-project"
+  },
+  "npm": {
+    "tool": "npm audit",
+    "counts": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    }
+  },
+  "limitations": "Known vulnerability feeds at scan time. This is not proof that no unknown vulnerability exists. Local application code is assessed through tests/review separately."
+}

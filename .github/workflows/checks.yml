@@ -1,0 +1,29 @@
+name: checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --project backend --locked --extra eval
+      - run: uv run --project backend pytest backend/tests -q
+        env:
+          DEEPEVAL_TELEMETRY_OPT_OUT: "YES"
+      - run: uv run --project backend python backend/scripts/verify_release.py --recorded-baseline
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run build

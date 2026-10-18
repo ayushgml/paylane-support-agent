@@ -1,0 +1,25 @@
+{
+  "scanned_at": "2026-10-18T08:34:22.084059+00:00",
+  "scanner": "Gitleaks 8.30.1",
+  "staged_snapshot": {
+    "result": "no leaks found",
+    "bytes_scanned": 6792803,
+    "command": "gitleaks git --staged --redact --no-banner"
+  },
+  "built_frontend": {
+    "result": "no leaks found",
+    "bytes_scanned": 269569,
+    "command": "gitleaks dir frontend/dist --redact --no-banner"
+  },
+  "excluded": "Backend environment, runtime databases, signing keys, caches and build directories are not tracked publication inputs.",
+  "note": "Final one-commit history and extracted ZIP are scanned again after commit. Package verification is delivered beside the ZIP and is excluded from its own input.",
+  "standalone_revision": {
+    "scanned_at": "2026-10-18T09:02:15.648463+00:00",
+    "staged_changes": "Gitleaks passed",
+    "built_frontend": "Gitleaks passed",
+    "public_responses": "Seven responses checked against actual model key, proxy secret and invite; none present",
+    "branding": "No old brand in tracked text; old screenshots replaced with actual hosted captures",
+    "hosted_checks": "16/16",
+    "note": "Final amended history is scanned again before push."
+  }
+}

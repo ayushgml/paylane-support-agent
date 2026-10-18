@@ -1,0 +1,21 @@
+{
+  "baseline_source_fingerprint": "fdee12f76ced64fb95d6dab32d9e58c34133c62b6d0ab5df4190cbcc9045a665",
+  "baseline_files": {
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "__main__.py": "c1c0ab2f83e31b9d6be7054aa8985ca093d32df1d6d3035b0f7d43ad43743162",
+    "agent.py": "487738bce0a6209a9eba7768189ce63a23315203f4d0d840ddce330a7393d364",
+    "cli.py": "822bd339a3df7aabc3fd7a1198a3f29c7e8d0819fa0144c81dd493cdda2ff6fa",
+    "domain.py": "c695259366350cf9ab3aabb824cc5fbc6c79620809baa44176c1a0c7c2d53619",
+    "evals.py": "3e433f12996337d8cef14c2431e827c6265005e262f91ddf6842820fa354f376",
+    "gateway.py": "f58c444e27150942ae6af989bdbf7ddcf261fb448f5947518133519767bf09ba",
+    "guardrails.py": "d5098c49a757820bd8f1184afb187c707b1fdee53cd53af51cae473f1add1162",
+    "privacy.py": "561bb093a97c7e9416adbc6fa26fe02eda6220906efe319a7283a7dac2c25ae0",
+    "provider.py": "716fd84797004ea5bcfc74f1fe424bee43441d4836763e906921f7029d45bb89",
+    "reliability.py": "20510f148227f58f908bee71ac471fc21b77ecf55a82a1615766e05af76af81e",
+    "server.py": "2f52bda090f70ece482951ea38a1d57a9243bb7d4bea8b377b5a361170967e3a",
+    "store.py": "d647049bf567c99b95fe65727057db19e048dc57321cbd5f91de37aa1afe9c89",
+    "transport.py": "af713472d72820cc3d8018c3ae8b9bd7466741481ea04c527d8f710e92806041"
+  },
+  "scope": "Only the OpenRouter X-Title application metadata is changed inside the evaluated agent package. Policies, prompts, scenarios, model selection, sampling, tools, renderer, judge and dependencies remain unchanged. The new deployment entrypoint is outside that package and has separate transport tests. This does not claim that the deployed HTTP topology was exercised by the historical 280-run cohort.",
+  "provider_source_without_application_title_sha256": "5c3874310eb1ad171f20f4d2672c3f7b64f6376224e8740ae1bf8f48e92f7664"
+}

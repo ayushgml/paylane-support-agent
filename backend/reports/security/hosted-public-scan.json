@@ -1,0 +1,22 @@
+{
+  "scanned_at": "2026-10-18T08:59:16.160894+00:00",
+  "site": "https://paylane-support-ayush.vercel.app",
+  "responses_checked": 7,
+  "paths": [
+    "/",
+    "/assets/index-D52SULo-.js",
+    "/assets/index-MrAoV-jP.css",
+    "/api/health",
+    "/api/scenarios",
+    "/api/reports/latest",
+    "/api/policy"
+  ],
+  "checks": [
+    "actual backend model key absent",
+    "actual proxy secret absent",
+    "actual invite absent",
+    "old branding absent from HTML and JS"
+  ],
+  "passed": true,
+  "secret_values_recorded": false
+}

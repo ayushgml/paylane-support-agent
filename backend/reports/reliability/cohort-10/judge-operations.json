@@ -1,0 +1,41 @@
+{
+  "cohort": "cohort-10",
+  "source_fingerprint": "fdee12f76ced64fb95d6dab32d9e58c34133c62b6d0ab5df4190cbcc9045a665",
+  "logical_ratings": 840,
+  "sdk_requests": 840,
+  "dispositions": {
+    "accepted": 840
+  },
+  "providers": {
+    "Nebius": 688,
+    "DeepInfra": 151,
+    "Venice": 1
+  },
+  "errors": {},
+  "grounding_rejections": 0,
+  "schema_rejections": 0,
+  "known_judge_cost_sum": 0.33733544,
+  "panels_with_known_completed_response_cost": 280,
+  "panels_missing_completed_response_cost": 0,
+  "request_timing_ms": {
+    "gate_wait_ms": {
+      "p50": 1396.5,
+      "p90": 3871.2000000000007,
+      "p95": 8490.949999999999,
+      "p99": 14642.570000000002
+    },
+    "sdk_latency_ms": {
+      "p50": 3345.5,
+      "p90": 14891.300000000001,
+      "p95": 17079.499999999996,
+      "p99": 23944.800000000003
+    },
+    "latency_ms": {
+      "p50": 5371.0,
+      "p90": 17158.9,
+      "p95": 19985.549999999992,
+      "p99": 28957.22
+    }
+  },
+  "interpretation": "Judge overhead is outside the customer request path. Latency is per SDK attempt, with gate waiting separated; it is not whole-cohort or conversation elapsed time. Costs include only reported completed-call values. A transport exception can leave unknown provider-side usage; unknown is not zero. Provider fallback stays within the same judge model. This is a derived aggregate of original recorded events; no scores or trials were changed."
+}

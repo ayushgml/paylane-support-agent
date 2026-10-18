@@ -1,0 +1,53 @@
+[
+  {
+    "id": 149,
+    "name": "Structured",
+    "description": "Structured",
+    "url": "https://mobbin.com/sites/structured-6464953d-ba54-4da6-bab1-dbf933bf5991/5e8a98a9-017b-4c81-90f9-43c8d21bc835/preview",
+    "app_url": "https://structured.money",
+    "categories": [
+      "finance"
+    ]
+  },
+  {
+    "id": 139,
+    "name": "Slush",
+    "description": "A sui wallet",
+    "url": "https://mobbin.com/sites/slush-e1914605-6bef-4654-bdc3-e2ccb3556aff/b1a7ff32-f494-4fd9-b7d6-a94fdaefd670/preview",
+    "app_url": "https://slush.app/",
+    "categories": [
+      "finance"
+    ]
+  },
+  {
+    "id": 114,
+    "name": "Varo Bank",
+    "description": "Early payday and cash advances",
+    "url": "https://mobbin.com/sites/varo-bank-61f98024-5491-4d39-90f3-8d3c6199150a/cc416a9a-b86a-445b-bb2c-4614a64114bd/preview",
+    "app_url": "https://www.varomoney.com/",
+    "categories": [
+      "finance"
+    ]
+  },
+  {
+    "id": 106,
+    "name": "Slash",
+    "description": "Banking platform for entrepreneurs",
+    "url": "https://mobbin.com/sites/slash-9f284916-0c10-4082-8e64-4eeac54fb454/033a6988-71f0-467e-8ef9-17ac40aadf78/preview",
+    "app_url": "https://www.slash.com/",
+    "categories": [
+      "finance",
+      "saas"
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Jeton",
+    "description": "One wallet for all needs",
+    "url": "https://mobbin.com/sites/jeton-e806debf-7f7d-4259-8a64-d62b53f2bc10/e8c0e585-9804-4430-a23b-3f768ed5ceec/preview",
+    "app_url": "https://www.jeton.com/",
+    "categories": [
+      "finance"
+    ]
+  }
+]

@@ -1,0 +1,9 @@
+backend/
+docs/
+submission/
+.git/
+.env*
+**/.env*
+**/node_modules/
+**/.runtime/
+**/.venv/

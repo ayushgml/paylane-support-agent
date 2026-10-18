@@ -1,0 +1,31 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "routes": [
+    {
+      "src": "/(.*)",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "no-referrer",
+        "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'"
+      },
+      "continue": true
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "https://paylane-api-production.up.railway.app/api/$1",
+      "headers": {"Cache-Control": "no-store"},
+      "transforms": [
+        {
+          "type": "request.headers",
+          "op": "set",
+          "target": {"key": "x-paylane-origin-secret"},
+          "args": "$PAYLANE_ORIGIN_SECRET",
+          "env": ["PAYLANE_ORIGIN_SECRET"]
+        }
+      ]
+    },
+    {"handle": "filesystem"},
+    {"src": "/(.*)", "dest": "/index.html"}
+  ]
+}

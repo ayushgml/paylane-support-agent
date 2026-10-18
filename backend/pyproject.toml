@@ -1,0 +1,29 @@
+[project]
+name = "paylane-agent"
+version = "0.1.0"
+description = "A policy-enforced fintech support agent, with guarded tools and repeat-run evaluations"
+requires-python = ">=3.11"
+dependencies = [
+  "langgraph>=1.0,<2",
+  "pydantic>=2.10,<3",
+  "fastapi>=0.115,<1",
+  "uvicorn>=0.30,<1",
+  "httpx>=0.28,<1",
+  "python-dotenv>=1,<2",
+  "typer>=0.15,<1",
+]
+[project.optional-dependencies]
+eval = ["deepeval>=3,<5"]
+[dependency-groups]
+dev = ["pytest>=8,<10", "hypothesis>=6,<7"]
+[project.scripts]
+paylane = "paylane.cli:app"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+[tool.hatch.build.targets.wheel]
+packages = ["src/paylane"]
